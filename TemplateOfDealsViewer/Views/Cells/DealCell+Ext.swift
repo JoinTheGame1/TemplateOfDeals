@@ -3,14 +3,16 @@ import UIKit
 extension DealCell {
     
     func makeLabel(
-        textColor: UIColor = .black,
-        textAlignment: NSTextAlignment = .center
+        textColor: UIColor = .label,
+        textAlignment: NSTextAlignment = .center,
+        font: UIFont = UIFont.systemFont(ofSize: 17, weight: .regular)
     ) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.clipsToBounds = true
         label.textColor = textColor
         label.textAlignment = textAlignment
+        label.font = font
+        label.backgroundColor = .systemBackground
         return label
     }
 }

@@ -9,33 +9,31 @@
 /* Begin PBXBuildFile section */
 		151E70572940D970000F9ED0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151E70562940D970000F9ED0 /* AppDelegate.swift */; };
 		151E70592940D970000F9ED0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151E70582940D970000F9ED0 /* SceneDelegate.swift */; };
-		151E705B2940D970000F9ED0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151E705A2940D970000F9ED0 /* ViewController.swift */; };
 		151E70602940D971000F9ED0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 151E705F2940D971000F9ED0 /* Assets.xcassets */; };
 		151E70632940D971000F9ED0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 151E70612940D971000F9ED0 /* LaunchScreen.storyboard */; };
 		151E706B2940D98C000F9ED0 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151E706A2940D98C000F9ED0 /* Server.swift */; };
+		F1791FD6298DC1AD0068AB4F /* DealsViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1791FD5298DC1AD0068AB4F /* DealsViewController+Ext.swift */; };
 		F1B7A41B298BDD4F004A7B49 /* DealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7A41A298BDD4F004A7B49 /* DealsViewController.swift */; };
 		F1B7A423298BFC7F004A7B49 /* DealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7A422298BFC7F004A7B49 /* DealCell.swift */; };
-		F1B7A426298BFD68004A7B49 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7A425298BFD68004A7B49 /* UIView+Ext.swift */; };
 		F1B7A428298C00A6004A7B49 /* DealCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7A427298C00A6004A7B49 /* DealCell+Ext.swift */; };
-		F1B7A42A298C0431004A7B49 /* LayoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7A429298C0431004A7B49 /* LayoutConstants.swift */; };
 		F1B7A42C298C4E7B004A7B49 /* DateToStringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7A42B298C4E7B004A7B49 /* DateToStringFormatter.swift */; };
+		F1B7A433298D25A4004A7B49 /* SortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7A432298D25A4004A7B49 /* SortButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		151E70532940D970000F9ED0 /* TemplateOfDealsViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateOfDealsViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		151E70562940D970000F9ED0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		151E70582940D970000F9ED0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		151E705A2940D970000F9ED0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		151E705F2940D971000F9ED0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		151E70622940D971000F9ED0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		151E70642940D971000F9ED0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		151E706A2940D98C000F9ED0 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		F1791FD5298DC1AD0068AB4F /* DealsViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DealsViewController+Ext.swift"; sourceTree = "<group>"; };
 		F1B7A41A298BDD4F004A7B49 /* DealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsViewController.swift; sourceTree = "<group>"; };
 		F1B7A422298BFC7F004A7B49 /* DealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealCell.swift; sourceTree = "<group>"; };
-		F1B7A425298BFD68004A7B49 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		F1B7A427298C00A6004A7B49 /* DealCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DealCell+Ext.swift"; sourceTree = "<group>"; };
-		F1B7A429298C0431004A7B49 /* LayoutConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstants.swift; sourceTree = "<group>"; };
 		F1B7A42B298C4E7B004A7B49 /* DateToStringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateToStringFormatter.swift; sourceTree = "<group>"; };
+		F1B7A432298D25A4004A7B49 /* SortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +105,7 @@
 		F1B7A41F298BDEC9004A7B49 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F1B7A431298D2592004A7B49 /* Buttons */,
 				F1B7A420298BFC61004A7B49 /* Controllers */,
 				F1B7A421298BFC67004A7B49 /* Cells */,
 			);
@@ -117,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				F1B7A41A298BDD4F004A7B49 /* DealsViewController.swift */,
-				151E705A2940D970000F9ED0 /* ViewController.swift */,
+				F1791FD5298DC1AD0068AB4F /* DealsViewController+Ext.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -134,11 +133,17 @@
 		F1B7A424298BFD55004A7B49 /* Extension+Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				F1B7A425298BFD68004A7B49 /* UIView+Ext.swift */,
-				F1B7A429298C0431004A7B49 /* LayoutConstants.swift */,
 				F1B7A42B298C4E7B004A7B49 /* DateToStringFormatter.swift */,
 			);
 			path = "Extension+Utilities";
+			sourceTree = "<group>";
+		};
+		F1B7A431298D2592004A7B49 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				F1B7A432298D25A4004A7B49 /* SortButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,13 +216,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1B7A42A298C0431004A7B49 /* LayoutConstants.swift in Sources */,
+				F1791FD6298DC1AD0068AB4F /* DealsViewController+Ext.swift in Sources */,
 				F1B7A41B298BDD4F004A7B49 /* DealsViewController.swift in Sources */,
-				151E705B2940D970000F9ED0 /* ViewController.swift in Sources */,
+				F1B7A433298D25A4004A7B49 /* SortButton.swift in Sources */,
 				151E70572940D970000F9ED0 /* AppDelegate.swift in Sources */,
 				F1B7A42C298C4E7B004A7B49 /* DateToStringFormatter.swift in Sources */,
 				F1B7A423298BFC7F004A7B49 /* DealCell.swift in Sources */,
-				F1B7A426298BFD68004A7B49 /* UIView+Ext.swift in Sources */,
 				151E706B2940D98C000F9ED0 /* Server.swift in Sources */,
 				151E70592940D970000F9ED0 /* SceneDelegate.swift in Sources */,
 				F1B7A428298C00A6004A7B49 /* DealCell+Ext.swift in Sources */,
