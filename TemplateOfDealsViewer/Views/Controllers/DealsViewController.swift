@@ -4,15 +4,16 @@ class DealsViewController: UIViewController {
     
     private let server = Server()
     private var deals: [Deal] = []
+    private var buttons: [SortButton] = []
     
     lazy var instrumentSortButton = makeSortButton(
-        type: .instrument,
+        sortType: .instrument,
         title: SortButtonTitle.instrument,
         titleAlignment: .leading
     )
-    lazy var priceSortButton = makeSortButton(type: .price, title: SortButtonTitle.price)
-    lazy var amountSortButton = makeSortButton(type: .amount, title: SortButtonTitle.amount)
-    lazy var sideSortButton = makeSortButton(type: .side, title: SortButtonTitle.side)
+    lazy var priceSortButton = makeSortButton(sortType: .price, title: SortButtonTitle.price)
+    lazy var amountSortButton = makeSortButton(sortType: .amount, title: SortButtonTitle.amount)
+    lazy var sideSortButton = makeSortButton(sortType: .side, title: SortButtonTitle.side)
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -23,14 +24,18 @@ class DealsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        navigationItem.title = Constants.navigationBarTitle
-        
+        buttons = [
+            instrumentSortButton,
+            priceSortButton,
+            amountSortButton,
+            sideSortButton
+        ]
         setupUI()
         server.subscribeToDeals { deals in
             self.deals.append(contentsOf: deals)
             self.tableView.reloadData()
         }
+        self.deals.sort(by: { $0.dateModifier > $1.dateModifier } )
     }
     
     private func configureTableView() {
@@ -41,12 +46,23 @@ class DealsViewController: UIViewController {
     }
     
     private func setupUI() {
+        view.backgroundColor = .systemBackground
+        navigationItem.title = Constants.navigationBarTitle
+        
         view.addSubview(instrumentSortButton)
         view.addSubview(priceSortButton)
         view.addSubview(amountSortButton)
         view.addSubview(sideSortButton)
-        configureTableView()
         
+        instrumentSortButton.delegate = self
+        priceSortButton.delegate = self
+        amountSortButton.delegate = self
+        sideSortButton.delegate = self
+        
+        configureTableView()
+    }
+    
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             instrumentSortButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
             instrumentSortButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8),
@@ -55,12 +71,12 @@ class DealsViewController: UIViewController {
             
             priceSortButton.topAnchor.constraint(equalTo: instrumentSortButton.topAnchor),
             priceSortButton.leadingAnchor.constraint(equalTo: instrumentSortButton.trailingAnchor, constant: 4),
-            priceSortButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.12),
+            priceSortButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.17),
             priceSortButton.heightAnchor.constraint(equalTo: instrumentSortButton.heightAnchor),
             
             amountSortButton.topAnchor.constraint(equalTo: instrumentSortButton.topAnchor),
             amountSortButton.leadingAnchor.constraint(equalTo: priceSortButton.trailingAnchor, constant: 4),
-            amountSortButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.30),
+            amountSortButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.26),
             amountSortButton.heightAnchor.constraint(equalTo: instrumentSortButton.heightAnchor),
             
             sideSortButton.topAnchor.constraint(equalTo: instrumentSortButton.topAnchor),
@@ -68,7 +84,7 @@ class DealsViewController: UIViewController {
             sideSortButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.15),
             sideSortButton.heightAnchor.constraint(equalTo: instrumentSortButton.heightAnchor),
             
-            tableView.topAnchor.constraint(equalTo: instrumentSortButton.bottomAnchor, constant: 8),
+            tableView.topAnchor.constraint(equalTo: instrumentSortButton.bottomAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
@@ -100,6 +116,48 @@ extension DealsViewController: UITableViewDataSource {
         else { return UITableViewCell() }
         
         return cell
+    }
+}
+
+extension DealsViewController: SortButtonDelegate {
+    func sortButtonPressed(_ sender: SortButton) {
+        inactiveButtons(except: sender.sortType)
+
+        switch sender.sortType {
+        case .instrument:
+            if sender.sortState == .ascending {
+                deals.sort(by: { $0.instrumentName > $1.instrumentName })
+            } else {
+                deals.sort(by: { $0.instrumentName < $1.instrumentName })
+            }
+        case .price:
+            if sender.sortState == .ascending {
+                deals.sort(by: { $0.price > $1.price })
+            } else {
+                deals.sort(by: { $0.price < $1.price })
+            }
+        case .amount:
+            if sender.sortState == .ascending {
+                deals.sort(by: { $0.amount > $1.amount })
+            } else {
+                deals.sort(by: { $0.amount < $1.amount })
+            }
+        case .side:
+            if sender.sortState == .ascending {
+                deals.sort(by: { $0.side.hashValue > $1.side.hashValue })
+            } else {
+                deals.sort(by: { $0.side.hashValue < $1.side.hashValue })
+            }
+        }
+        tableView.reloadData()
+    }
+    
+    private func inactiveButtons(except: SortButtonType) {
+        buttons.forEach { button in
+            if button.sortType != except {
+                button.inactive()
+            }
+        }
     }
 }
 

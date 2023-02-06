@@ -23,7 +23,6 @@ final class Server {
         queue.async {
             var deals: [Deal] = []
             let dealsCount = Int64.random(in: 1_000_000..<1_001_000)
-//            let dealsCount = Int64(20)
             let dealsCountInPacket = 100
             var j = 0
             for i in 0...dealsCount {

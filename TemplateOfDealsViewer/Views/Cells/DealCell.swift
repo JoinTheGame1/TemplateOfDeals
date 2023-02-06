@@ -51,7 +51,7 @@ class DealCell: UITableViewCell {
             
             priceLabel.topAnchor.constraint(equalTo: instrumentLabel.topAnchor),
             priceLabel.leadingAnchor.constraint(equalTo: instrumentLabel.trailingAnchor, constant: 4),
-            priceLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.12),
+            priceLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.17),
             priceLabel.bottomAnchor.constraint(equalTo: instrumentLabel.bottomAnchor),
             
             amountLabel.topAnchor.constraint(equalTo: instrumentLabel.topAnchor),
