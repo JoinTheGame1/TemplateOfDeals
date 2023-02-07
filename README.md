@@ -1,7 +1,20 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&pause=1000&width=435&lines=NTProgress)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=NTProgress)](https://git.io/typing-svg)
 
-Экран с таблицей сделок
+# Экран с таблицей сделок
 
-![1](https://imgur.com/MVKSd4G)
+![1](https://i.ibb.co/gtPcX1g/1.jpg)
+![2](https://i.ibb.co/XVNwcNp/2.jpg)
 
-<img src="https://imgur.com/5X9CaHN" alt="альтернативный текст">
+# Использованный стэк: 
+
+* UIKit
+* AutoLayout
+* UIAnimations
+
+# Описание:
+
+* При запуске приложения происходит генерация ~1_000_000 сделок, которые отправляются на экран постепенно.
+* Сделки изначально отсортированы по дате модификации.
+* Таблицу можно сортировать по возрастанию/убыванию по одному из параметров: инструмент, цена, количество, сторона сделки.
+* Если все данные загружены в таблицу, то она листается очень плавно при любом виде скроллов.
+* AutoLayout реализован для двух видов ориентации девайса.
