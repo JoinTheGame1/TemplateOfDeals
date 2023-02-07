@@ -31,6 +31,7 @@ class DealsViewController: UIViewController {
             sideSortButton
         ]
         setupUI()
+        setupConstraints()
         server.subscribeToDeals { deals in
             self.deals.append(contentsOf: deals)
             self.tableView.reloadData()
