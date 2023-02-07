@@ -3,4 +3,5 @@
 Экран с таблицей сделок
 
 ![1](https://imgur.com/MVKSd4G)
-![2](https://imgur.com/5X9CaHN)
+
+<img src="https://imgur.com/5X9CaHN" alt="альтернативный текст">
