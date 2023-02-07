@@ -2,5 +2,5 @@
 
 Экран с таблицей сделок
 
-![Темная тема](https://ibb.co/DG7WyNy)
-![Светлая тема](https://ibb.co/Fncd5yy)
+![1](https://imgur.com/MVKSd4G)
+![2](https://imgur.com/5X9CaHN)
