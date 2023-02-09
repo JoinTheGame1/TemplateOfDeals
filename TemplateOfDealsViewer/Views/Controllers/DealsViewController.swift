@@ -34,9 +34,9 @@ class DealsViewController: UIViewController {
         setupConstraints()
         server.subscribeToDeals { deals in
             self.deals.append(contentsOf: deals)
+            self.deals.sort(by: { $0.dateModifier > $1.dateModifier } )
             self.tableView.reloadData()
         }
-        self.deals.sort(by: { $0.dateModifier > $1.dateModifier } )
     }
     
     private func configureTableView() {
